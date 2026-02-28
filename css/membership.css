@@ -8,6 +8,12 @@
     flex-direction: column;
     gap:20px;
  }
+.p-img{
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+    border: 1px solid #E8306E;  
+}
  .member-1 h3{
     color: white;
  }
@@ -567,3 +573,4 @@ color: gold;
     text-decoration: none;
     
 }
+
