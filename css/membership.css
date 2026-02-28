@@ -8,6 +8,10 @@
     flex-direction: column;
     gap:20px;
  }
+.plan a{
+    text-decoration: none;
+    color: white;
+}
 .p-img{
     height: 80px;
     width: 80px;
@@ -573,4 +577,5 @@ color: gold;
     text-decoration: none;
     
 }
+
 
