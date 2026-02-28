@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment - Luxe Salon</title>
+    <link rel="stylesheet" href="css/success.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+        <header>
+        <a href="index.html"><img src="images/logo.png" class="logo" alt="Luxe Salon"></a>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="membership.html">Membership</a></li>
+  <li class="profile-menu">
+                    <a href="profile.html"><img src="/images/sophy.png" alt="profile-img" class="p-img"></a>
+                </li>            </ul>
+        </div>
+    </header>
+<div class="appoint" >
+    <h1>Appointment Booked Successfully</h1>
+    <img src="images/tick.png" alt="tick" class="tick" >
+    <p class="white1">Your appointment has been successfully booked. Here are the details:</p>
+
+    <div class="details" >
+        <div class="detail" >
+            <div class="d-1">
+                <p class="pink"><strong>Booking ID</strong></p>
+                <p class="white" id="booking-id">#12345</p>
+            </div>
+            <div class="d-1">
+                <p class="pink"><strong>Stylist</strong></p>
+                <p class="white" id="success-stylist"></p>
+            </div>
+        </div>
+        <div class="detail"  >
+            <div class="d-2">
+                <p class="pink"><strong>Service</strong></p>
+                <p class="white" id="success-service"></p>
+            </div>
+            <div class="d-2">
+                <p class="pink"><strong>Date & Time</strong></p>
+                <p class="white" id="success-datetime"></p>
+            </div>
+        </div>
+    </div>
+</div>
+   <footer>
+        <div class="footers">
+            <div class="footer-1">
+                <a href="index.html">
+                    <img src="images/footer-logo.png" class="footer-logo" alt="Luxe Salon">
+                </a>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="footer-2">
+                <p><strong>Terms & Policies</strong></p>
+                <p>Terms of Service</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div class="footer-2">
+                <p><strong>Home</strong></p>
+                <p>Service</p>
+                <p>Membership</p>
+            </div>
+            <div class="footer-2">
+                <p><strong>Contact</strong></p>
+                <p>+(123) 4567 89001</p>
+                <p>agencycr@gmail.com</p>
+            </div>
+        </div>
+        <hr>
+        <p id="center">Copyright, Luxe Salon 2022. All rights reserved.</p>
+    </footer>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    // Get booking details from URL parameters
+    const params = new URLSearchParams(window.location.search);
+
+    document.getElementById('success-stylist').innerText = params.get('stylist') || 'N/A';
+    document.getElementById('success-service').innerText = params.get('service') || 'N/A';
+    document.getElementById('success-datetime').innerText = params.get('datetime') || 'N/A';
+
+    // Generate random booking ID
+    const bookingId = Math.floor(10000 + Math.random() * 90000);
+    document.getElementById('booking-id').innerText = '#' + bookingId;
+});
+</script>
+
+</body>
+</html>

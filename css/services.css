@@ -1,0 +1,558 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+     font-family: "Epilogue", sans-serif;
+}
+body{
+         background-color: #472430;
+         display: flex;
+         flex-direction: column;
+         gap:20px;
+
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 150px;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    background-color: #472430;
+    border-bottom: 3px solid #E8306E;
+
+    padding: 0 60px;
+    color: white;
+}
+.logo{
+    height: 100px;
+    margin-top:30px;
+}
+header .menu ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 150px;
+    margin: 0;
+    cursor: pointer;
+   margin-top:25px;
+     font-weight: 600;
+    font-size: 22px;
+    padding: 0;
+}
+ 
+header .menu ul .login-text {
+    background-color: #E8306E;
+    color: white;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: 0.3s;
+}
+header .menu ul a{
+    color: white;
+    text-decoration: none;
+}
+
+header .menu ul .login-text:hover{
+    color: #E8306E;
+background-color: white ;
+}
+ .menu ul li.active a {
+    border-bottom: 2px solid #E8306E; /* your theme color */
+    font-weight: 600;
+    color:#E8306E;
+ }
+.p-img{
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+    border: 1px solid #E8306E;  
+}
+ .section-6{
+    text-align: center;
+    color: white;
+    height: 280px;
+    line-height: 2;
+     padding: 10px;
+     margin-top: 50px;
+
+}
+
+footer{
+    display: flex;
+    margin-top:40px;
+    flex-direction: column;
+    padding: 10px;
+    gap:30px;
+    height: 330px;
+    background-color: 
+#1d1d1d;
+}
+footer .footers{
+display: flex;
+justify-content: space-evenly;
+color: white;
+padding: 10px;
+}
+.footer-1 .icons{
+    color: grey;
+    font-size: 35px;
+    display: flex;
+    gap:25px;
+    margin-left: 10px;
+}
+.footer-2{
+    line-height: 2;
+    font-size: 22px;
+}
+footer hr{
+    width: 1300px;
+    margin: auto;
+}
+
+#center{
+    text-align: center;
+    color: white;
+    font-size: 22px;
+}
+
+.login-box{
+    background-color: 
+#ea9ab5;
+height: 450px;
+position: fixed;
+    top: 150px;
+    left:350px;
+    display: none;
+
+width: 800px;
+border-radius: 10px;
+padding: 10px;
+text-align: center;
+margin: auto;
+line-height: 2;
+}
+
+.login-box .login-logo{
+    height: 100px;
+    width: 250px;
+    margin: auto;
+}
+.login-box p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.login-box input{
+    height: 50px;
+    background-color: white;
+    width: 400px;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.login-box input::placeholder{
+    color: #E8306E;
+    font-weight: 600;
+    padding: 10px;
+     font-size: 20px;
+}
+ .login-box .continue{
+     background-color: #E8306E;
+    height: 50px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    margin: auto;
+    font-weight: 600;
+    font-size: 22px;
+    margin-top: 30px;
+    color: white;
+    cursor: pointer;
+ }
+ .otp-inputs input{
+    width: 100px;
+ }
+ .otp-inputs{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .profile-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    border: 1px solid #E8306E;
+     
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap:50px;
+    margin-top: 20px;
+    
+}
+.buttons .book{
+    background-color: #E8306E;
+    height: 50px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+
+}
+ .buttons .book a{
+   
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.buttons .member{
+    background-color: white;
+    height: 50px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    border: 2px solid #E8306E;
+
+}
+.buttons .book,
+.buttons .member {
+    height: 50px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid #E8306E;
+    transition: 0.3s;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* Default Colors */
+.book {
+    background-color: #E8306E;
+    color: white;
+}
+
+.member {
+    background-color: white;
+    color: #E8306E;
+}
+
+/* Make link inherit */
+.buttons a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hover Effects */
+.member:hover {
+    background-color: #E8306E;
+    color: white;
+}
+
+.book:hover {
+    background-color: white;
+    color: #E8306E;
+}
+.section-6{
+    text-align: center;
+    color: white;
+    height: 280px;
+     padding: 10px;
+     margin-top: 50px;
+
+}
+.service-1{
+    margin-top: 200px;
+}
+.section-2{
+    margin-left: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.services{
+    display: flex;
+     
+   gap:30px;
+    align-items: center;
+    padding: 10px;
+}
+.service-img{
+       transition: transform 0.4s ease;
+    height: 200px;
+    width: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+ .service:hover .service-img {
+    transform: scale(1.1);
+}
+.service {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+}
+
+ 
+.service:hover p {
+    font-weight: 800;
+}
+
+.service p {
+    margin-top: 15px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.section-3{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    margin-left: 50px;
+
+}
+.section-3 h2{
+    color: white;
+}
+.chooses{
+    display: grid;
+    grid-template-columns: repeat(4,250px);
+    gap:30px;
+    grid-template-rows: repeat(1,250px);
+    padding: 10px;
+    
+
+    
+}
+.chooses .choose{
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+     gap:20px;
+}
+.chooses .choose i{
+    font-size: 25px;
+}
+.chooses .choose p{
+    color: #E8306E;
+    
+}
+
+.section-4{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;;
+
+}
+.section-4 .testimony{
+    background-color: white;
+    height: 240px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.section-4 h2{
+    color: white;
+}
+.section-4 .profile{
+    display: flex;
+    gap:20px;
+
+}
+
+.section-4 .profile .review-time{
+    color: 
+#964f66;
+}
+ 
+.section-4 .profile .img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.section-4 .testimony p{
+    line-height: 1.5;
+}
+
+.section-4 .star{
+    color: #E8306E;
+}
+
+.section-4 .likes{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    color: 
+#964f66;
+}
+
+
+.hair-4{
+   
+    padding: 20px;
+    margin-left:20px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.hair-4 h3{
+color: white;
+}
+.hair-4 .h-styles{
+    display: flex;
+    gap:50px;
+}
+.hair-rou{
+    height: 270px;
+    width: 270px;
+    border-radius: 50%;
+}
+.h-style {
+    height: auto;
+    width: 250px;
+    text-align: center;
+}
+
+.h-style .white{
+    color: white;
+}
+.h-style .gold{
+    color: #b37c4c;
+    
+}
+.h-style p{
+    padding: 5px;
+}
+
+.hair-5{
+
+  padding: 20px;
+    margin-left:20px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.hair-5 h3{
+color: white;
+}
+
+.hair-5 .h-hairs{
+    display: flex;
+     gap:100px;
+}
+.hair-5 .h-hairs .h-hair{
+    height: 250px;
+    width: 200px;;
+
+}
+.hair-hair{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+.h-hair .purple{
+    color: #a09ba8;
+    margin-left:15px;
+    font-size: 18px;
+}
+
+.facial-2{
+  padding: 20px;
+    margin-left:20px;
+    display: flex;
+        height: 400px;
+    margin-top:30px;
+    flex-direction: column;
+    gap:20px;
+}
+.facial-2 h3{
+color: white;
+}
+.facial-2 .facial-services{
+    display: flex;
+    flex-wrap: wrap;
+    gap:25px;
+}
+.facial-img{
+    height: 200px;;
+    width: 200px;
+}
+.facial-2 .facial-services .facial-service{
+    height: 250px;
+    width: 250px;
+    padding: 10px;
+    line-height: 1.5;
+    
+}
+
+.facial-service p{
+    margin-left: 15px;
+}
+.facial-service .white{
+    color: white;
+}
+.facial-service .gold{
+    color: #b37c4c;
+}
+
+ .mk-3{
+    padding: 20px;
+    margin-left:20px;
+    display: flex;
+    margin-top:30px;
+    flex-direction: column;
+    gap:20px;
+}
+.mk-3 h3{
+color: white;
+}
+.mk-3 .artists{
+    display: flex;
+    gap:30px;
+}
+.mk-3 .artists .artist p {
+    line-height: 1.5;
+    margin-left: 10px;
+}
+.mk-3 .artists .artist .white{
+    color: white;
+}
+.mk-3 .artists .artist .mag{
+    color: #895e6a;
+}

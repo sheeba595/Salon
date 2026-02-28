@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - Luxe Salon</title>
+    <link rel="stylesheet" href="css/select.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+     <header>
+        <a href="index.html"><img src="images/logo.png" class="logo" alt="Luxe Salon"></a>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="membership.html">Membership</a></li>
+  <li class="profile-menu">
+                    <a href="profile.html"><img src="/images/sophy.png" alt="profile-img" class="p-img"></a>
+                </li>            </ul>
+        </div>
+    </header>
+
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="successOverlay" >
+    <div class="success-box" >
+        <h2>Membership Activated</h2>
+        <p>Your membership is now active and ready to use. Enjoy the benefits!</p>
+
+        <div class="divider" ></div>
+
+        <div class="success-details">
+            <div>
+                <span class="label">Membership ID</span>
+                <p>#1234567890</p>
+            </div>
+            <div>
+                <span class="label">Valid Until</span>
+                <p>December 31, 2024</p>
+            </div>
+
+            <a href="index.html" class="go-home" >Go to Home</a>
+        </div>
+    </div>
+</div>
+
+<!-- CHECKOUT SECTION -->
+<div class="plan-1" >
+    <h2>Checkout</h2>
+    <h4>Membership Plan</h4>
+    <br>
+
+    <div class="p-1" >
+        <div class="p">
+            <h4>Gold Plan</h4>
+            <p class="pink">15% off on all services, 2 free add-on services per quarter, priority booking.</p>
+        </div>
+        <img src="images/card.png" alt="card" class="card-img" >
+    </div>
+
+    <div class="method-1" >
+        <h3>Payment Method</h3>
+
+        <!-- CLICK OPTIONS -->
+        <input type="text" class="pay-option" id="cardOption" placeholder="Credit / Debit Card" >
+        <input type="text" class="pay-option" id="upiOption" placeholder="UPI Payment" >
+
+        <!-- CARD FORM (HIDDEN INITIALLY) -->
+        <div class="card-form" id="cardForm">
+            <div class="card-header">
+                <i class="fa-solid fa-credit-card"></i> Credit / Debit Card
+            </div>
+
+            <input type="text" placeholder="Card Number" >
+            <input type="text" placeholder="Cardholder Name" >
+
+            <div class="row" style="display:flex; gap:10px;">
+                <input type="text" placeholder="Expiry Date" >
+                <input type="text" placeholder="CVV" >
+            </div>
+        </div>
+
+        <p class="pink" >Secure payment. Your data is protected.</p>
+
+        <div class="activate" >
+            Pay & Activate Membership
+        </div>
+    </div>
+</div>
+
+
+   <footer>
+        <div class="footers">
+            <div class="footer-1">
+                <a href="index.html">
+                    <img src="images/footer-logo.png" class="footer-logo" alt="Luxe Salon">
+                </a>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="footer-2">
+                <p><strong>Terms & Policies</strong></p>
+                <p>Terms of Service</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div class="footer-2">
+                <p><strong>Home</strong></p>
+                <p>Service</p>
+                <p>Membership</p>
+            </div>
+            <div class="footer-2">
+                <p><strong>Contact</strong></p>
+                <p>+(123) 4567 89001</p>
+                <p>agencycr@gmail.com</p>
+            </div>
+        </div>
+        <hr>
+        <p id="center">Copyright, Luxe Salon 2022. All rights reserved.</p>
+    </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const cardOption = document.getElementById("cardOption");
+    const upiOption = document.getElementById("upiOption");
+    const cardForm = document.getElementById("cardForm");
+    const activateBtn = document.querySelector(".activate");
+    const successOverlay = document.getElementById("successOverlay");
+
+    if (cardOption) {
+        cardOption.addEventListener("click", function () {
+            cardForm.style.display = "block";
+        });
+    }
+
+    if (upiOption) {
+        upiOption.addEventListener("click", function () {
+            cardForm.style.display = "none";
+        });
+    }
+
+    if (activateBtn) {
+        activateBtn.addEventListener("click", function () {
+            // Validate card form if visible
+            if(cardForm.style.display === "block"){
+                const inputs = cardForm.querySelectorAll("input");
+                let filled = true;
+                inputs.forEach(input => {
+                    if(input.value.trim() === ""){
+                        filled = false;
+                    }
+                });
+                if(!filled){
+                    alert("Please fill all card details");
+                    return;
+                }
+            }
+            successOverlay.style.display = "flex";
+        });
+    }
+});
+</script>
+
+</body>
+</html>

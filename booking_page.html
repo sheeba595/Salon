@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking-Luxe Salon</title>
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+        <header>
+        <a href="index.html"><img src="images/logo.png" class="logo" alt="Luxe Salon"></a>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="membership.html">Membership</a></li>
+  <li class="profile-menu">
+                    <a href="profile.html"><img src="/images/sophy.png" alt="profile-img" class="p-img"></a>
+                </li>            </ul>
+        </div>
+    </header>
+
+<div class="booking-1">
+    <h1>Your Booking</h1>
+<div class="b-1">
+      <div class="booking-con">
+        <h3>Service</h3>
+        <select id="service-select">
+            <option value="" >Select Service</option>
+            <option value="1">Haircut & Style</option>
+            <option value="2">Skin Care</option>
+            <option value="3">Spa</option>
+            <option value="4">Makeup</option>
+        </select>
+
+<h3>Stylist</h3>
+<div class="text" id="stylist-text">
+  
+  
+        <a href="select_stylist.html" class="select-stylist-btn">Select Stylist</a>
+    
+</div>
+        <h3>Date</h3>
+        <input type="date" id="date-input" class="date-input" >
+
+        <h3>Select Time</h3>
+        <select id="time-select">
+            <option value="one"><p><strong>12.00 AM - 01.00 AM</strong></p></option>
+            <option value="two"><p><strong>01.00 AM - 02.00 AM</strong></p></option>
+            <option value="three"><p><strong>02.00 AM - 03.00 AM</strong></p></option>
+            <option value="four"><p><strong>03.00 AM - 04.00 AM</strong></p></option>
+            <option value="five"><p><strong>04.00 AM - 05.00 AM</strong></p></option>
+        </select>
+
+    <div class="process" id="proceed-btn">
+        Proceed to Payment
+    </div>
+    </div>
+    <div class="booking-con2">
+        <div class="edit">
+            Edit
+        </div>
+        <div class="edit">
+            Edit
+        </div>
+        <div class="edit">
+            Edit
+        </div>
+        <div class="edit">
+            Edit
+        </div>
+
+        <h2 class="white" id="price">$120</h2>
+    </div>
+</div>
+  
+   
+</div>
+   <footer>
+        <div class="footers">
+            <div class="footer-1">
+                <a href="index.html">
+                    <img src="images/footer-logo.png" class="footer-logo" alt="Luxe Salon">
+                </a>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="footer-2">
+                <p><strong>Terms & Policies</strong></p>
+                <p>Terms of Service</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div class="footer-2">
+                <p><strong>Home</strong></p>
+                <p>Service</p>
+                <p>Membership</p>
+            </div>
+            <div class="footer-2">
+                <p><strong>Contact</strong></p>
+                <p>+(123) 4567 89001</p>
+                <p>agencycr@gmail.com</p>
+            </div>
+        </div>
+        <hr>
+        <p id="center">Copyright, Luxe Salon 2022. All rights reserved.</p>
+    </footer>
+
+<script>
+document.getElementById('proceed-btn').addEventListener('click', () => {
+    const serviceSelect = document.getElementById('service-select');
+    const service = serviceSelect.options[serviceSelect.selectedIndex].text;
+
+    const stylist = document.getElementById('stylist-text').innerText.trim();
+    const date = document.getElementById('date-input').value;
+    const timeSelect = document.getElementById('time-select');
+    const time = timeSelect.options[timeSelect.selectedIndex].text;
+    const price = document.getElementById('price').innerText.replace('$','');
+
+    if(service === "Select Service" || stylist === "" || stylist === "Select Stylist" || date === "" || time === ""){
+        alert("Please fill all booking details!");
+        return;
+    }
+
+    // Redirect to secure payment page with all details
+    const params = new URLSearchParams();
+    params.set('service', service);
+    params.set('stylist', stylist);
+    params.set('date', date);
+    params.set('time', time);
+    params.set('price', price);
+
+    window.location.href = "secure_payment.html?" + params.toString();
+});
+
+// Reset booking fields when clicking edit
+document.querySelectorAll('.booking-con2 .edit').forEach(editBtn => {
+    editBtn.addEventListener('click', () => {
+        document.getElementById('service-select').selectedIndex = 0;
+        document.getElementById('stylist-text').innerHTML = `<a href="select_stylist.html" class="select-stylist-btn">Select Stylist</a>`;
+        document.getElementById('date-input').value = '';
+        document.getElementById('time-select').selectedIndex = 0;
+        document.getElementById('price').innerText = '$120'; // reset default price
+    });
+});
+
+// Update price based on time slot
+const timeSelect = document.getElementById('time-select');
+const priceEl = document.getElementById('price');
+
+timeSelect.addEventListener('change', () => {
+    const selectedValue = timeSelect.value;
+    let price = 120; // default price
+
+    if(selectedValue === 'three' || selectedValue === 'four'){
+        price = 65;
+    } else if(selectedValue === 'five'){
+        price = 75;
+    }
+
+    priceEl.innerText = `$${price}`;
+});
+</script>
+ 
+</body>
+</html>

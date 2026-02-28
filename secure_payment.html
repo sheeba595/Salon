@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Securepay - Luxe Salon</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <a href="index.html"><img src="images/logo.png" class="logo" alt="Luxe Salon"></a>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="membership.html">Membership</a></li>
+  <li class="profile-menu">
+                    <a href="profile.html"><img src="/images/sophy.png" alt="profile-img" class="p-img"></a>
+                </li>        </ul>
+    </div>
+</header>
+
+<!-- SECURE PAYMENT SECTION -->
+<div class="secure-1">
+    <h1>Secure Payment</h1>
+    <h3>Payment Method</h3>
+    <input type="text" placeholder="Credit / Debit Card">
+    <input type="text" placeholder="UPI Payment">
+
+    <div class="summary">
+        <div class="s-1">
+            <p id="white"><strong>Amount Summary</strong></p>
+            <p>Subtotal</p>
+            <p>Taxes</p>
+            <p>Total</p>
+        </div>
+        <div class="s-2">
+            <br>
+            <p><span id="booking-amount">$0</span></p>
+            <p><span id="tax-amount">$0</span></p>
+            <p><span id="total-amount">$0</span></p>
+        </div>
+    </div>
+
+    <p class="pink">Secure Payment powered by Stripe</p>
+
+    <div class="confirm" id="pay-confirm">
+        Pay and Confirm Booking
+    </div>
+</div>
+   <footer>
+        <div class="footers">
+            <div class="footer-1">
+                <a href="index.html">
+                    <img src="images/footer-logo.png" class="footer-logo" alt="Luxe Salon">
+                </a>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="footer-2">
+                <p><strong>Terms & Policies</strong></p>
+                <p>Terms of Service</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div class="footer-2">
+                <p><strong>Home</strong></p>
+                <p>Service</p>
+                <p>Membership</p>
+            </div>
+            <div class="footer-2">
+                <p><strong>Contact</strong></p>
+                <p>+(123) 4567 89001</p>
+                <p>agencycr@gmail.com</p>
+            </div>
+        </div>
+        <hr>
+        <p id="center">Copyright, Luxe Salon 2022. All rights reserved.</p>
+    </footer>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    // Get price from URL parameter
+    const params = new URLSearchParams(window.location.search);
+    let price = parseFloat(params.get('price')) || 0;
+
+    // Display booking amount
+    document.getElementById('booking-amount').innerText = `$${price.toFixed(2)}`;
+
+    // Calculate tax (example 10%)
+    const tax = price * 0.10;
+    document.getElementById('tax-amount').innerText = `$${tax.toFixed(2)}`;
+
+    // Total amount
+    const total = price + tax;
+    document.getElementById('total-amount').innerText = `$${total.toFixed(2)}`;
+});
+
+document.getElementById('pay-confirm').addEventListener('click', () => {
+    const cardInput = document.querySelector('input[placeholder="Credit / Debit Card"]').value.trim();
+    const upiInput = document.querySelector('input[placeholder="UPI Payment"]').value.trim();
+
+    if(cardInput === "" && upiInput === ""){
+        alert("Please enter payment details!");
+        return;
+    }
+
+    // Get all booking details from URL
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get('service');
+    const stylist = params.get('stylist');
+    const date = params.get('date');
+    const time = params.get('time');
+    const price = params.get('price');
+
+    // Pass them to success page
+    const successParams = new URLSearchParams();
+    successParams.set('service', service);
+    successParams.set('stylist', stylist);
+    successParams.set('datetime', date + ', ' + time);
+    successParams.set('price', price);
+
+    // Redirect to success page (replace with actual HTML page if needed)
+    window.location.href = "success_page.html?" + successParams.toString();
+});
+</script>
+
+</body>
+</html>

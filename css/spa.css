@@ -1,0 +1,518 @@
+
+.spa-1{
+    height: 500px;
+    width: 95%;
+        margin-top:200px;
+    margin-left: 35px;
+    background: url("../images/spa-treat.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    
+    
+}
+
+.spa-1 h1{
+    font-size: 60px;
+    text-shadow: 0 0 2px black;
+}
+.spa-1 p{
+    font-size: 20px;
+        text-shadow: 0 0 2px black;
+
+}
+
+.spa-2{
+    padding: 20px;
+    margin-left:20px;
+    display: flex;
+    margin-top:30px;
+    flex-direction: column;
+    gap:20px;
+}
+.spa-2 h3{
+color: white;
+}
+.spa-2 .spa-services {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    padding: 20px;
+}
+.spa-2 .spa-services .spa-service{
+    display: flex;
+    justify-content: space-around;
+}
+.spa-2 .spa-services .spa-service .spa-box{
+    line-height: 2;
+    font-size: 18px;
+}
+.spa-box .white{
+    color: white;
+    font-weight: 600;
+}
+.spa-box .green{
+    color: #4c7746;
+}
+.spa-box .books {
+    background-color: #f5f2e5;
+    border-radius: 10px;
+    height: 40px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.spa-box .books  a{
+    color: #E8306E;
+    text-decoration: none;
+}
+.spa-3{
+    padding: 20px;
+    margin-left:20px;
+    display: flex;
+    margin-top:30px;
+    flex-direction: column;
+    gap:20px;
+}
+.spa-3 h3{
+color: white;
+}
+.spa-3 p{
+    color: white;
+    line-height: 1.5;
+    padding: 10px;
+}
+.ambiences{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+ .spa-4{
+    padding: 20px;
+    margin-left:20px;
+    display: flex;
+    margin-top:30px;
+    flex-direction: column;
+    gap:20px;
+}
+.spa-4 h3{
+color: white;
+}
+.spa-4 .ratings{
+    display: flex;  
+}
+.spa-4 .ratings .rate{
+    line-height:2;
+    padding: 20px;
+}
+.spa-4 .ratings .rate h1{
+    color: white;
+}
+.spa-4 .ratings .rate .star{
+    color: #1ae51a;
+}
+.spa-4 .ratings .rate  p{
+    color: whitesmoke;
+}
+.spa-4 .ratings  .rates{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.spa-4 .ratings  .rates .rate-box{
+    display: flex;
+    gap:20px;
+}
+.rate-bar {
+    width: 300px;          /* total bar width */
+    height: 8px;
+    background: #e0e0e0;   /* light gray background */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.rate-progress1 {
+    display: block;        /* ✅ REQUIRED */
+    width: 75%;            /* ✅ percentage fill */
+    height: 100%;
+    background: #1ae51a;   /* ✅ USE background, not color */
+    border-radius: 10px;
+}
+.rate-progress2 {
+    display: block;        /* ✅ REQUIRED */
+    width: 55%;            /* ✅ percentage fill */
+    height: 100%;
+    background: #1ae51a;   /* ✅ USE background, not color */
+    border-radius: 10px;
+}
+.rate-progress3 {
+    display: block;        /* ✅ REQUIRED */
+    width: 35%;            /* ✅ percentage fill */
+    height: 100%;
+    background: #1ae51a;   /* ✅ USE background, not color */
+    border-radius: 10px;
+}
+.rate-progress4 {
+    display: block;        /* ✅ REQUIRED */
+    width: 25%;            /* ✅ percentage fill */
+    height: 100%;
+    background: #1ae51a;   /* ✅ USE background, not color */
+    border-radius: 10px;
+}
+.rate-progress5 {
+    display: block;        /* ✅ REQUIRED */
+    width: 15%;            /* ✅ percentage fill */
+    height: 100%;
+    background: #1ae51a;   /* ✅ USE background, not color */
+    border-radius: 10px;
+}
+.rate-box .green{
+    color:#4c6e44
+}
+.rate-box 
+{
+    color: white;
+}
+
+.spa-7{
+  padding: 20px;
+    margin-left:20px;
+    display: flex;
+    margin-top:20px;
+    flex-direction: column;
+    gap:20px;
+}
+.spa-7 h3{
+color: white;
+}
+.spa-7 .review-time{
+    color: #1ae51a;
+}
+.spa-7 .star{
+    color: #1ae51a;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+     font-family: "Epilogue", sans-serif;
+}
+body{
+         background-color: #472430;
+         display: flex;
+         flex-direction: column;
+         gap:20px;
+
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 150px;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    background-color: #472430;
+    border-bottom: 3px solid #E8306E;
+
+    padding: 0 60px;
+    color: white;
+}
+.logo{
+    height: 100px;
+    margin-top:30px;
+}
+header .menu ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 150px;
+    margin: 0;
+    cursor: pointer;
+   margin-top:25px;
+     font-weight: 600;
+    font-size: 22px;
+    padding: 0;
+}
+ 
+header .menu ul .login-text {
+    background-color: #E8306E;
+    color: white;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: 0.3s;
+}
+header .menu ul a{
+    color: white;
+    text-decoration: none;
+}
+
+header .menu ul .login-text:hover{
+    color: #E8306E;
+background-color: white ;
+}
+ .menu ul li.active a {
+    border-bottom: 2px solid #E8306E; /* your theme color */
+    font-weight: 600;
+    color:#E8306E;
+ }.p-img{
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+    border: 1px solid #E8306E;  
+}
+
+ .section-6{
+    text-align: center;
+    color: white;
+    height: 280px;
+     padding: 10px;
+     line-height: 2;
+     margin-top: 50px;
+
+}
+
+footer{
+    display: flex;
+    margin-top:40px;
+    flex-direction: column;
+    padding: 10px;
+    gap:30px;
+    height: 330px;
+    background-color: 
+#1d1d1d;
+}
+footer .footers{
+display: flex;
+justify-content: space-evenly;
+color: white;
+padding: 10px;
+}
+.footer-1 .icons{
+    color: grey;
+    font-size: 35px;
+    display: flex;
+    gap:25px;
+    margin-left: 10px;
+}
+.footer-2{
+    line-height: 2;
+    font-size: 22px;
+}
+footer hr{
+    width: 1300px;
+    margin: auto;
+}
+
+#center{
+    text-align: center;
+    color: white;
+    font-size: 22px;
+}
+
+.login-box{
+    background-color: 
+#ea9ab5;
+height: 450px;
+position: fixed;
+    top: 150px;
+    left:350px;
+    display: none;
+
+width: 800px;
+border-radius: 10px;
+padding: 10px;
+text-align: center;
+margin: auto;
+line-height: 2;
+}
+
+.login-box .login-logo{
+    height: 100px;
+    width: 250px;
+    margin: auto;
+}
+.login-box p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.login-box input{
+    height: 50px;
+    background-color: white;
+    width: 400px;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.login-box input::placeholder{
+    color: #E8306E;
+    font-weight: 600;
+    padding: 10px;
+     font-size: 20px;
+}
+ .login-box .continue{
+     background-color: #E8306E;
+    height: 50px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    margin: auto;
+    font-weight: 600;
+    font-size: 22px;
+    margin-top: 30px;
+    color: white;
+    cursor: pointer;
+ }
+ .otp-inputs input{
+    width: 100px;
+ }
+ .otp-inputs{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .profile-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    border: 1px solid #E8306E;
+     
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap:50px;
+    margin-top: 20px;
+    
+}
+.buttons .book{
+    background-color: #E8306E;
+    height: 50px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+
+}
+ .buttons .book a{
+   
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.buttons .member{
+    background-color: white;
+    height: 50px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    border: 2px solid #E8306E;
+
+}
+.buttons .book,
+.buttons .member {
+    height: 50px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid #E8306E;
+    transition: 0.3s;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* Default Colors */
+.book {
+    background-color: #E8306E;
+    color: white;
+}
+
+.member {
+    background-color: white;
+    color: #E8306E;
+}
+
+/* Make link inherit */
+.buttons a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hover Effects */
+.member:hover {
+    background-color: #E8306E;
+    color: white;
+}
+
+.book:hover {
+    background-color: white;
+    color: #E8306E;
+}
+
+.hair-profile{
+    display: flex;
+    gap:20px;
+}
+.hair-profile .hair-con{
+    margin-top:15px;
+    line-height: 1.5;
+}
+.hair-rev{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+   object-fit: cover;
+    
+}
+.hair-review {
+    line-height: 2;
+}
+.hair-con .review-time{
+    color: gold;
+}
+.hair-review .star{
+color: gold;
+
+}
+.hair-review{
+    color: white;
+}
+.h-service a{
+    text-decoration: none;
+    
+}

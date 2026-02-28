@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile - Luxe Salon</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <a href="index.html"><img src="images/logo.png" class="logo" alt="Luxe Salon"></a>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="membership.html">Membership</a></li>
+  <li class="profile-menu">
+                    <a href="profile.html"><img src="/images/sophy.png" alt="profile-img" class="p-img"></a>
+                </li>        </ul>
+    </div>
+</header>
+
+<!-- PROFILE SECTION -->
+<div class="profile-1">
+    <div class="pro-1">
+        <img src="images/sophy.png" alt="profile" class="pro-img">
+        <div class="pro-con">
+            <p class="white"><strong>Sophia Bennett</strong></p>
+            <p class="pink">sophiabennett@gmail.com</p>
+        </div>
+    </div>
+
+    <!-- UPCOMING BOOKINGS -->
+    <div class="bookings-con">
+        <h3>Upcoming Bookings</h3>
+
+        <div class="bookings-con-1">
+            <div class="books-1">
+                <p class="pink">Booking ID: #24567</p>
+                <p class="white"><strong>HairCut & Style</strong></p>
+                <p class="pink">
+                    Date: July 15, 2024 | Time: 2:00 P.M.<br>
+                    Stylist: Emily Carter | Status: Confirmed
+                </p>
+                <div class="cancel">Cancel</div>
+            </div>
+            <img src="images/pr1.png" alt="">
+        </div>
+
+        <div class="bookings-con-2">
+            <div class="books-1">
+                <p class="pink">Booking ID: #67890</p>
+                <p class="white"><strong>Manicure</strong></p>
+                <p class="pink">
+                    Date: July 15, 2024 | Time: 2:00 P.M.<br>
+                    Stylist: Emily Carter | Status: Confirmed
+                </p>
+                <div class="cancel">Reschedule</div>
+            </div>
+            <img src="images/pr2.png" alt="">
+        </div>
+    </div>
+
+    <!-- LOGOUT BUTTON -->
+  
+        <button id="btn" type="submit">Logout</button>
+     
+</div>
+
+
+  <footer>
+        <div class="footers">
+            <div class="footer-1">
+                <a href="index.html">
+                    <img src="images/footer-logo.png" class="footer-logo" alt="Luxe Salon">
+                </a>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p id="center">Copyright, Luxe Salon 2022. All rights reserved.</p>
+    </footer>
+</body>
+<script>
+const button=document.getElementById('btn');
+ button.addEventListener("click",()=>{
+    window.location.href="index.html";
+ })
+
+</script>
+</html>

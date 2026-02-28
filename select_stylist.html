@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Stylist - Luxe Salon</title>
+    <link rel="stylesheet" href="css/stylist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+</head>
+<body>
+     <header>
+        <a href="index.html"><img src="images/logo.png" class="logo" alt="Luxe Salon"></a>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="membership.html">Membership</a></li>
+  <li class="profile-menu">
+                    <a href="profile.html"><img src="/images/sophy.png" alt="profile-img" class="p-img"></a>
+                </li>            </ul>
+        </div>
+    </header>
+
+<div class="stylist-1">
+    <h1>Select a Stylist</h1>
+    <p class="light">Choose a stylist that best fits your needs and preferences.</p>
+
+    <!-- Stylist options -->
+    <div class="white-box" data-name="Ava Harper">
+        <div class="white-con">
+            <p><strong>Ava Harper</strong></p>
+            <p class="pink">Speciality: Hair Coloring</p>
+            <button class="select-btn">Select</button>
+        </div>
+        <img src="images/style2.png" alt="style-img" class="style-img">
+    </div>
+
+    <div class="white-box" data-name="Ethan Bennett">
+        <div class="white-con">
+            <p><strong>Ethan Bennett</strong></p>
+            <p class="pink">Speciality: Hair Cutting</p>
+            <button class="select-btn">Select</button>
+        </div>
+        <img src="images/style3.png" alt="style-img" class="style-img">
+    </div>
+
+    <div class="white-box" data-name="Olivia Carter">
+        <div class="white-con">
+            <p><strong>Olivia Carter</strong></p>
+            <p class="pink">Speciality: Hair Styling</p>
+            <button class="select-btn">Select</button>
+        </div>
+        <img src="images/style1.png" alt="style-img" class="style-img">
+    </div>
+
+    <!-- Continue button -->
+    <div class="stylist-btn" id="continue-btn">
+        Continue with Selected Stylist
+    </div>
+</div>
+   <footer>
+        <div class="footers">
+            <div class="footer-1">
+                <a href="index.html">
+                    <img src="images/footer-logo.png" class="footer-logo" alt="Luxe Salon">
+                </a>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="footer-2">
+                <p><strong>Terms & Policies</strong></p>
+                <p>Terms of Service</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div class="footer-2">
+                <p><strong>Home</strong></p>
+                <p>Service</p>
+                <p>Membership</p>
+            </div>
+            <div class="footer-2">
+                <p><strong>Contact</strong></p>
+                <p>+(123) 4567 89001</p>
+                <p>agencycr@gmail.com</p>
+            </div>
+        </div>
+        <hr>
+        <p id="center">Copyright, Luxe Salon 2022. All rights reserved.</p>
+    </footer>
+
+<script>
+let selectedStylist = null;
+
+// Click the Select button inside box
+document.querySelectorAll('.select-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent parent click
+
+        // Remove highlight from all boxes
+        document.querySelectorAll('.white-box').forEach(b => b.classList.remove('selected-stylist'));
+
+        const box = btn.closest('.white-box'); // get parent box
+        box.classList.add('selected-stylist');
+
+        selectedStylist = box.dataset.name;
+    });
+});
+
+// Continue button click
+document.getElementById('continue-btn').addEventListener('click', () => {
+    if(!selectedStylist){
+        alert('Please select a stylist before continuing.');
+        return;
+    }
+    // Navigate to booking page with stylist as GET parameter
+    window.location.href = "booking_page.html?stylist=" + encodeURIComponent(selectedStylist);
+});
+</script>
+
+</body>
+</html>
